@@ -13,7 +13,7 @@ public class Main {
 		float temp = 23.2f;//Literal 'f' para salvaguardar todos los decimales.
 		System.out.println("Temperatura actual: " + temp + "ºC");
 		
-		String academia = "MasterMind";//En Java el string no non-primitive.
+		String academia = "MasterMind";//En Java el string no non-primitive. Su declaración empieza por mayúscula.
 		System.out.println(academia);
 		
 	}
