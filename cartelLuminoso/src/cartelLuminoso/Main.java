@@ -1,6 +1,6 @@
 package cartelLuminoso;
 
-public class Ma {
+public class Main {
 
 	public static void main(String[] args) {
 		// Imprimir letras formadas por 7 filas y 5 columnas
