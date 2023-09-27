@@ -4,33 +4,50 @@ import java.util.*;
 public class Main {
 	
 	public static String pregunta(String p) {
-		//Crea canal de escucha:
+		//Activo Scanner
 		Scanner sc = new Scanner(System.in);
-		//Efectucamos pregunta:
-		System.out.print(p);
-		//Leemos dato recibido:
-		String respuesta = sc.nextLine();
-		//Devolvemos dato:
-		return respuesta;		
+		//Pregunto
+		System.out.println(p);
+		//Responde el usuario
+		String r=sc.nextLine();
+		//DEvuelvo la respuesta
+		sc.close();
+		return r;
 	}
 	
-	public static void triaje(String nombre) {
+	//Funcion es la decision de donde redirigir al paciente
+	public static void departTrauma(String nombre) {
+		//Realizar proceso de preguntas trauma
+	}
+	
+	//Funcion es la decision de donde redirigir al paciente
+	public static void triage(String nombre) {
+		String respuesta="";
 		
-		String respuesta = "";
-		System.out.println(nombre+":\n");
-		
-		respuesta = pregunta("Ha sufrido una caida??: ");
-		System.out.println(respuesta);
-		
-		respuesta = pregunta("Tiene usted fiebre??: ");
-		System.out.println(respuesta);
+		//Preguntamos si se ha caído
+		respuesta=pregunta(nombre+" ¿Has sufrido una caída?[S,N]");
+		while(!respuesta.equals("S")&&!respuesta.equals("N")) {
+			respuesta=pregunta(nombre+" ¿Has sufrido una caída?[S,N]");
+		}
+		if(respuesta.equals("S")) {
+			//TRAUMATOLOGIA
+			System.out.println("A trauma");
+			departTrauma(nombre);
+		}else if(respuesta.equals("N")){
+			//Preguntamos si tiene fiebre
+			respuesta=pregunta(nombre+" ¿Has tenido fiebre?[S,N]");
+			while(!respuesta.equals("S")&&!respuesta.equals("N")) {
+				respuesta=pregunta(nombre+" ¿Has tenido fiebre?[S,N]");
+			}
+		}
 		
 	}
+	
 
 	public static void main(String[] args) {
-		
-		String paciente = pregunta("Cual es su nombre???: "); 
-		triaje(paciente);		
+
+		//Comienza el proceso
+		triage("Paco");
 
 	}
 

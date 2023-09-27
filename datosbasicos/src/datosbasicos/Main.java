@@ -1,4 +1,4 @@
-package datosbasicos;
+package datosBasicos;
 
 public class Main {
 
