@@ -1,6 +1,11 @@
 package holocaustoH;
 
 public class Habitacion {
+	//Damos tamaño a la sala para toda la partida mediante declaración de constantes:
+	public static final int ancho=6;
+	public static final int alto=6;
+	
+	//Declaramos puertas:
 	private Posicion Entrada;
 	private Posicion Salida;
 
